@@ -5,7 +5,16 @@
     "author": "huschi",
     "license": "MIT",
     "readmeFilename": "README.md",
-    "main": "dist/index.js",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.js"
+        },
+        "./shared": {
+            "import": "./dist/shared/index.js",
+            "require": "./dist/shared/index.js"
+        }
+    },
     "files": [
         "dist/**/*",
         "*.md"

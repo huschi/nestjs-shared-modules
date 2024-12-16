@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { TestService } from '@nestjsplus/shared';
+import { TestService } from '@nestjsplus/shared/shared';
 
 @Injectable()
 export class Service1Service {
