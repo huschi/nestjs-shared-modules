@@ -62,8 +62,8 @@ curl http://localhost:3040/api/common/getHello
 }
 ```
 
-### Deep Imports for Shared Modules
-If multiple modules are located in the `shared` folder, it might be better to support deep imports like:
+### Conditional Exports for Shared Modules
+If multiple modules are located in the shared folder, it might be better to support deep imports with conditional exports like:
 
 ```typescript
 import { CommonService } from '@nestjsplus/shared/common';
@@ -71,7 +71,7 @@ import { Module1Service } from '@nestjsplus/shared/module1';
 import { Module2Component } from '@nestjsplus/shared/module2';
 ```
 
-This approach improves organization and supports tree-shaking. However, I tried configuring package.json exports to enable these deep imports, but I couldn't get it to work as intended.
+When using "module": "Node16" and "moduleResolution": "Node16" in your TypeScript tsconfig.json, deep imports through the "exports" field become straightforward and consistent. However, be aware that this configuration might introduce compatibility issues with older npm packages or tools that do not fully support the Node16 module resolution system.
 
 ## License
 This project is licensed under the MIT License.
